@@ -1,97 +1,142 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Kush Patel — Front End Developer",
+  author: "Kush Patel",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Frontend Developer based in Boston, MA. I specialize in React.js, Next.js, and building responsive web applications.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/kushlogo.jpg",
   navLinks: [
+    { text: "Home", href: "#hero" },
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
+    { text: "Skills", href: "#skills" },
     { text: "About", href: "#about" },
+    { text: "Resume", href: "/Resume_Kush_Patel_FSDev.pdf" },
   ],
   socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
+    { text: "X", href: "https://x.com/__kush_19" },
+    {
+      text: "LinkedIn",
+      href: "https://www.linkedin.com/in/er-kush-patel-841b25301",
+    },
+    { text: "Github", href: "https://github.com/KushPatel1912" },
+    {
+      text: "Instagram",
+      href: "https://www.instagram.com/__.kush__19?igsh=MXY1cXJxa3RpdThzeA==",
+    },
   ],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  socialImage: "/kushlogo.jpg",
+  canonicalURL: "https://kushpatel.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Kush Patel",
+    specialty: "Front End Developer",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "Frontend Developer based in Boston, MA. I specialize in React.js, Next.js, and building responsive web applications.",
+    email: "kush1912patel@gmail.com",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Dots N Key Technologies",
+      position: "Frontend Developer - Internship",
+      startDate: "July 2023",
+      endDate: "Dec 2023",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Developed a React.js POS admin panel with 13+ business management modules (accounting, inventory, sales, employees, appointments, etc.).",
+        "Integrated frontend with backend by building REST APIs in Node.js and managing data in MySQL.",
+        "Implemented a secure login system with password validation and MySQL authentication.",
+        "Collaborated in Agile teams using GitHub for version control.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Keni Technologies",
+      position: "Frontend Developer - E-commerce Website",
+      startDate: "Dec 2022",
+      endDate: "July 2023",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Built complete e-commerce frontend using Next.js and React.js, creating seamless shopping experience for end users.",
+        "Developed responsive product catalogue, shopping cart, and checkout interfaces using component-based architecture.",
+        "Used the help of AI to learn and develop the workflow to rapidly develop and deploy Next.js features while learning the framework.",
+        "Implemented mobile-first design principles ensuring optimal user experience across all devices and screen sizes.",
       ],
     },
     {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
+      company: "Unistar Softech Pvt.Ltd",
+      position: "Web Developer – Live Weather App",
+      startDate: "May 2022",
+      endDate: "July 2022",
+      summary: [
+        "Built an interactive React.js weather app that pulls live data from a weather API, showing real-time forecasts for the hour, 10 days, and the month.",
+        "Designed a clean, light-blue user interface with Bootstrap and CSS, ensuring it looks great and works smoothly on any device.",
+        "Added a map-based search so users can click or search for any location to instantly see its weather details.",
+        "Included extra insights like UV index, pressure, and maps to give users a complete and engaging weather experience.",
+      ],
     },
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      name: "Nike E-Commerce Website",
+      summary:
+        "A visually captivating and feature-rich e-commerce platform built with React.js, designed to deliver a premium shopping experience inspired by Nike's sleek brand identity. The site showcases high-quality product images through smooth, interactive carousels that make browsing feel dynamic and engaging. Integrated with the Google Maps API, users can instantly find real-time store locations anywhere in the world. Robust form validation ensures a secure and user-friendly process for both sign-in and sign-up, reducing errors and enhancing trust. Every component is designed to be responsive and intuitive, offering a seamless experience whether on desktop, tablet, or mobile. From stunning visuals to practical, real-world functionality, this project blends aesthetic appeal with powerful interactivity.",
+      linkPreview: "https://nike-website-eta-pearl.vercel.app/dashboard",
+      linkSource: "https://github.com/KushPatel1912/Nike-Website", // Update with actual repo link
+      image: "/nike-ecommerce.png", // Add appropriate image
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
+      name: "Sonar POS",
+      summary:
+        "Developed a React.js POS admin panel with 13+ business management modules (accounting, inventory, sales, employees, appointments, etc.). Integrated frontend with backend by building REST APIs in Node.js and managing data in MySQL. Implemented a secure login system with password validation and MySQL authentication. Collaborated in Agile teams using GitHub for version control.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
+      linkSource: "https://github.com/KushPatel1912/PointOfSale_System", // Update with actual repo link
+      image: "/sonarpos.png", // Add appropriate image
     },
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
+      name: "IPL 2024 Sold Players Dashboard",
+      summary:
+        "An immersive cricket analytics platform that brings the excitement of the Indian Premier League 2024 auction to life. The dashboard greets users with a visually clean list of all IPL teams, each clickable to reveal the full roster of players sold to that franchise during the auction. With just one more click, users can open a detailed player card displaying in-depth information such as name, role, and auction price—perfect for cricket fans and analysts alike. Built with React.js on the frontend and a Node.js + Express + MongoDB backend, it delivers fast data rendering, smooth navigation, and persistent data storage. The result is a highly interactive, data-driven web application that transforms raw auction results into a user-friendly, engaging experience.",
+      linkPreview: "https://ipl-2024-sold-players.vercel.app/",
+      linkSource: "https://github.com/KushPatel1912/IPL_2024_Sold_Players", // Update with actual repo link
+      image: "/ipl-dashboard.png", // Add appropriate image
+    },
+    {
+      name: "Live Weather App",
+      summary:
+        "Interactive React.js weather app with real-time forecasts, map-based search, and comprehensive weather insights.",
+      linkPreview: "https://react-live-weather-app-two.vercel.app/",
+      linkSource: "https://github.com/KushPatel1912", // Update with actual repo link
+      image: "/weather-app.png", // Add appropriate image
+    },
+
+    {
+      name: "CareEscapes AI",
+      summary:
+        "Partnered with a US-based healthcare company through Northeastern University's experiential learning program to develop patient-facing modules including appointment scheduling, service browsing, and facility information using React.js. Created a secure clinical staff login portal with robust authentication, prioritizing patient data security and regulatory compliance in the healthcare environment.",
+      linkPreview: "https://careescapesai.com/",
+      linkSource: "https://github.com/KushPatel1912", // Update with actual repo link
+      image: "/CE1.png", // Add appropriate image
+    },
+    {
+      name: "ZAK Social Media Platform",
+      summary:
+        "Developed a Twitter-like social media platform with posting, media upload, and interactive commenting features using React.js. Implemented a secure login system with password validation and MySQL authentication. Collaborated in Agile teams using GitHub for version control.",
       linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      linkSource: "/", // Update with actual repo link
+      image: "/zak-social.png", // Add appropriate image
     },
   ],
   about: {
     description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
+      Hi, I'm Kush Patel, a passionate Frontend Developer with expertise in React.js and Next.js. Currently pursuing my Master's in Applied Machine Intelligence at Northeastern University, I bring a unique blend of web development skills and AI knowledge to create innovative digital solutions.
 
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
+      My experience spans across healthcare, e-commerce, and social media platforms, where I've built responsive, scalable web applications with a focus on user experience and performance. I'm particularly skilled in component-based architecture, REST API integration, and creating seamless interfaces that work beautifully across all devices.
+
+      From developing comprehensive business management systems to building engaging social media platforms, I love tackling challenges that push the boundaries of frontend development while ensuring accessibility and scalability.
     `,
-    image: "/alejandro-big.jpg",
+    image: "/kushlogo.jpg",
   },
 };
 

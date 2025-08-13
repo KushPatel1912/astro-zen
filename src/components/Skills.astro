@@ -1,0 +1,66 @@
+---
+import Section from "./Section.astro";
+import { Image } from "astro:assets";
+
+interface Skill {
+  name: string;
+  iconPath: string;
+}
+
+const skills: Skill[] = [
+  // Programming Languages
+  { name: "JavaScript", iconPath: "/JavaScript.svg" },
+  { name: "Python", iconPath: "/Python.svg" },
+
+  // Frontend Technologies
+  { name: "React", iconPath: "/React.svg" },
+  { name: "Next.js", iconPath: "/Next.js.svg" },
+  { name: "HTML5", iconPath: "/HTML5.svg" },
+  { name: "CSS3", iconPath: "/CSS3.png" },
+  { name: "Tailwind CSS", iconPath: "/Tailwind CSS.svg" },
+  { name: "Bootstrap", iconPath: "/Bootstrap.svg" },
+
+  // Backend & Database
+  { name: "Node.js", iconPath: "/Node.js.svg" },
+  { name: "MySQL", iconPath: "/MySQL.svg" },
+  { name: "REST API", iconPath: "/RestAPi.png" },
+  { name: "FastAPI", iconPath: "/FastAPI.svg" },
+
+  // Data Formats
+  { name: "JSON", iconPath: "/JSON.svg" },
+
+  // Data Visualization
+  { name: "Tableau", iconPath: "/tableau.svg" },
+  { name: "Power BI", iconPath: "/powerbi.svg" },
+
+  // Development Tools
+  { name: "VS Code", iconPath: "/Visual Studio Code (VS Code).svg" },
+  { name: "Git", iconPath: "/Git.svg" },
+  { name: "GitHub", iconPath: "/GitHub.svg" },
+  { name: "Jupyter", iconPath: "/Jupyter.svg" },
+  { name: "Colab", iconPath: "/GoogleColab.svg" },
+];
+---
+
+<Section text="Technologies I've Worked With" href="skills">
+  <div
+    class="grid grid-cols-2 gap-8 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+  >
+    {
+      skills.map((skill) => (
+        <div class="flex flex-col items-center text-center">
+          <div class="mb-3 flex h-16 w-16 items-center justify-center rounded-lg bg-white/5 p-3 transition-all duration-300 hover:bg-white/10">
+            <Image
+              src={skill.iconPath}
+              alt={`${skill.name} logo`}
+              width={40}
+              height={40}
+              class="h-full w-full object-contain"
+            />
+          </div>
+          <span class="text-sm font-medium text-white">{skill.name}</span>
+        </div>
+      ))
+    }
+  </div>
+</Section>

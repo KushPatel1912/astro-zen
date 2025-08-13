@@ -5,14 +5,14 @@ type Props = HeroProps;
 const { name, specialty, summary, email } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
+<section class="py-20 text-left md:py-28" id="hero">
   <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
+    class="mb-1.5 font-serif text-6xl font-bold tracking-tightest text-white sm:text-7xl md:mb-0 md:text-8xl"
   >
     {name}
   </h1>
   <p
-    class="mb-9 font-serif text-4xl leading-[46px] font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
+    class="mb-9 font-serif text-3xl leading-[40px] font-bold tracking-tighter text-primary sm:text-4xl md:text-5xl"
   >
     {specialty}
   </p>

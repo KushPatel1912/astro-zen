@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* Ensure full viewport coverage */
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 16px; /* Reduce base font size to zoom out */
+}
+
+/* Zoom out effect for better overview */
+@media (min-width: 768px) {
+  html {
+    font-size: 18px; /* Smaller on medium screens and up */
+  }
+}
+
 @theme {
   --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
   --font-serif: "Gabarito Variable", ui-serif, serif;

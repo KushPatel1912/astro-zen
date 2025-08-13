@@ -8,48 +8,49 @@ type Props = HeaderProps;
 const { siteLogo, navLinks } = Astro.props;
 ---
 
-<header
-  class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in justify-between bg-black px-5 py-6"
->
-  <a href="/" aria-label="Home link">
-    <Image
-      class="rounded-full"
-      src={siteLogo}
-      width="45"
-      height="45"
-      alt="website logo"
-    />
-  </a>
+<header class="sticky top-0 z-50 w-full animate-slide-in bg-black py-6">
+  <div class="mx-auto flex max-w-7xl justify-between px-5 md:px-8 lg:px-12">
+    <a href="/" aria-label="Home link">
+      <Image
+        class="rounded-full"
+        src={siteLogo}
+        width="60"
+        height="1000"
+        alt="website logo"
+      />
+    </a>
 
-  <button
-    type="button"
-    id="menu-button"
-    class="px-1.5 text-neutral sm:hidden"
-    aria-expanded="false"
-    aria-controls="main-menu"
-  >
-    <Menu />
-  </button>
+    <button
+      type="button"
+      id="menu-button"
+      class="px-1.5 text-neutral sm:hidden"
+      aria-expanded="false"
+      aria-controls="main-menu"
+    >
+      <Menu />
+    </button>
 
-  <nav
-    class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
-    id="main-menu"
-  >
-    <ul class="gap-2 sm:flex">
-      {
-        navLinks.map((link) => (
-          <li class="relative">
-            <a
-              class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
-              href={link.href}
-            >
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+    <nav
+      class="absolute top-20 right-5 hidden rounded-xl border border-neutral/40 bg-black px-4 py-5 text-neutral sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0"
+      id="main-menu"
+    >
+      <ul class="gap-2 sm:flex">
+        {
+          navLinks.map((link) => (
+            <li class="relative">
+              <a
+                class={`nav-item relative block p-2 text-sm font-medium transition-all duration-500 after:absolute after:bottom-0 after:left-2/4 after:h-2 after:w-1 after:-translate-x-2/4 after:text-primary after:opacity-0 after:content-['•'] hover:text-white`}
+                href={link.href}
+                target={link.text === "Resume" ? "_blank" : undefined}
+              >
+                {link.text}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
 </header>
 
 <script>
@@ -66,7 +67,22 @@ const { siteLogo, navLinks } = Astro.props;
 
   button?.addEventListener("click", toggleMenu);
   navItems.forEach((item) => {
-    item?.addEventListener("click", toggleMenu);
+    item?.addEventListener("click", (e) => {
+      // Close mobile menu
+      toggleMenu();
+
+      // Handle navigation highlighting for anchor links
+      const href = item.getAttribute("href");
+      if (href && href.startsWith("#")) {
+        // Remove active state from all nav items
+        navItems.forEach((navItem) => {
+          navItem.classList.remove("text-white", "md:after:opacity-100");
+        });
+
+        // Add active state to clicked item
+        item.classList.add("text-white", "md:after:opacity-100");
+      }
+    });
   });
 
   // Update navigation based on scroll position with Intersection Observer
@@ -74,20 +90,42 @@ const { siteLogo, navLinks } = Astro.props;
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
+          const sectionId = entry.target.id;
+          console.log("Section in view:", sectionId);
+
           navItems.forEach((item) => {
-            if (item.getAttribute("href") === `#${entry.target.id}`) {
-              item.classList.add("text-white", "md:after:opacity-100");
-            } else {
-              item.classList.remove("text-white", "md:after:opacity-100");
+            const href = item.getAttribute("href");
+            if (href && href.startsWith("#")) {
+              const targetId = href.substring(1); // Remove the # from href
+              if (targetId === sectionId) {
+                console.log(
+                  "Activating nav item:",
+                  item.textContent,
+                  "for section:",
+                  sectionId,
+                );
+                item.classList.add("text-white", "md:after:opacity-100");
+              } else {
+                item.classList.remove("text-white", "md:after:opacity-100");
+              }
             }
           });
         }
       });
     },
-    { threshold: 0.5 },
+    { threshold: 0.2, rootMargin: "-100px 0px -100px 0px" },
   );
 
-  document.querySelectorAll("section").forEach((section) => {
+  // Observe all sections with IDs
+  const sections = document.querySelectorAll("section[id]");
+  console.log(
+    "Observing sections:",
+    Array.from(sections).map((s) => ({
+      id: s.id,
+      text: s.querySelector("h2")?.textContent,
+    })),
+  );
+  sections.forEach((section) => {
     observer.observe(section);
   });
 

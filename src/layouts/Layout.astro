@@ -42,10 +42,12 @@ const ogImgUrl = canonicalURL + socialImage;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={ogImgUrl} />
   </head>
-  <body class="bg-black font-sans">
+  <body class="min-h-screen w-full bg-black font-sans">
     <Header siteLogo={siteLogo} navLinks={navLinks} />
-    <main class="mx-auto max-w-3xl px-5">
-      <slot />
+    <main class="w-full">
+      <div class="mx-auto max-w-4xl">
+        <slot />
+      </div>
     </main>
     <Footer author={author} socialLinks={socialLinks} />
   </body>
